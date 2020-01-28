@@ -8,4 +8,13 @@ spring:
     url: jdbc:mysql://localhost:3306/supplie
   jpa:
     hibernate:
-      ddl-auto: create 
+      ddl-auto: create
+  application:
+    name: 'supplier'
+    
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://8761/eureka 

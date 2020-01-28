@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: 'store'
+    
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://8761/eureka

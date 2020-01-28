@@ -13,7 +13,7 @@ public class BuyService {
 
 	public void saveBuy(Order order) {
 		RestTemplate client = new RestTemplate();
-		ResponseEntity<SupplierInfo> exchange = client.exchange("http://localhost:8081/supplierinfo/" + order.getAddress().getState(), 
+		ResponseEntity<SupplierInfo> exchange = client.exchange("http://supplier/supplierinfo/" + order.getAddress().getState(), 
 				HttpMethod.GET, null, SupplierInfo.class);
 		
 		System.out.println(exchange.getBody().getAddress());
