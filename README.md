@@ -1,5 +1,5 @@
 # flowershop
-This repository contains 3 microservices for the online operation of a flower shop
+This repository contains 3 microservices + eureka server for the online operation of a flower shop
 
 ![finalidades](https://user-images.githubusercontent.com/26811984/73300469-cf5a1d00-41ef-11ea-98d8-47410c86e87c.png)
 
