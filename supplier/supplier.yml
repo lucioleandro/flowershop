@@ -1,8 +1,0 @@
-spring:
-  datasource:
-    username: root
-    password: ativ$webmb
-    url: jdbc:mysql://localhost:3306/supplie
-  jpa:
-    hibernate:
-      ddl-auto: create
