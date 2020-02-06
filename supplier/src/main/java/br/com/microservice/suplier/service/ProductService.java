@@ -14,8 +14,8 @@ public class ProductService {
 	@Autowired
 	private ProductRepository repository;
 	
-	public List<Product> getProdutosPorEstado(String estado) {
-		return repository.findByEstado(estado);
+	public List<Product> getProductsByState(String estado) {
+		return repository.findByState(estado);
 	}
 
 	

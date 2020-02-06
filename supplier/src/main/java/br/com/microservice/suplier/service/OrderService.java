@@ -22,30 +22,30 @@ public class OrderService {
 	@Autowired
 	private ProductRepository productRepository;
 
-	public Order realizaPedido(List<OrderItemDTO> items) {
+	public Order placeOrder(List<OrderItemDTO> items) {
 		
 		if(items == null) {
 			return null;
 		}
 		
-		List<OrderItem> pedidoItens = toPedidoItem(items);
-		Order order = new Order(pedidoItens);
+		List<OrderItem> orderItems = toOrderItem(items);
+		Order order = new Order(orderItems);
 		order.setPreparationTime(items.size());
 		return orderRepository.save(order);
 	}
 	
-	public Order getPedidoPorId(Long id) {
+	public Order getOrderById(Long id) {
 		return this.orderRepository.findById(id).orElse(new Order());
 	}
 
-	private List<OrderItem> toPedidoItem(List<OrderItemDTO> items) {
+	private List<OrderItem> toOrderItem(List<OrderItemDTO> items) {
 		
-		List<Long> idsProdutos = items
+		List<Long> productsIds = items
 				.stream()
 				.map(item -> item.getId())
 				.collect(Collectors.toList());
 		
-		List<Product> orderProducts = productRepository.findByIdIn(idsProdutos);
+		List<Product> orderProducts = productRepository.findByIdIn(productsIds);
 		
 		List<OrderItem> orderItems = items
 			.stream()

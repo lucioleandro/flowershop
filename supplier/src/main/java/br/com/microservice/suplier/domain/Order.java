@@ -25,12 +25,12 @@ public class Order {
 	private OrderStatus status;
 	
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "pedidoId")
-	private List<OrderItem> itens;
+	@JoinColumn(name = "orderId")
+	private List<OrderItem> items;
 	
 	public Order(List<OrderItem> itens) {
-		this.itens = itens;
-		this.status = OrderStatus.RECEBIDO;
+		this.items = itens;
+		this.status = OrderStatus.RECEIVED;
 	}
 	
 	public Order() {
@@ -53,7 +53,7 @@ public class Order {
 	}
 
 	public List<OrderItem> getItens() {
-		return itens;
+		return items;
 	}
 	
 }

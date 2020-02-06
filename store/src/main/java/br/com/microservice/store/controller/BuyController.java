@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.microservice.store.domain.Order;
+import br.com.microservice.store.dto.OrderInfoDTO;
 import br.com.microservice.store.service.BuyService;
 
 @RestController
@@ -17,7 +18,7 @@ public class BuyController {
 	private BuyService service;
 
 	@PostMapping
-	public void saveBuy(@RequestBody Order order) {
-		service.saveBuy(order);
+	public OrderInfoDTO saveBuy(@RequestBody Order order) {
+		return service.saveBuy(order);
 	}
 }
